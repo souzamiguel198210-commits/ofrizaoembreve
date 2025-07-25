@@ -1,47 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O Frizão - Em Breve</title>
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="O Frizão" />
-<link rel="manifest" href="/site.webmanifest" />
-   <style>
-  body {
-      background: white;
-      color: #0055a5;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
-    }
-    a {
-      color: #0055a5;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      font-size: 18px;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" type="image/png">
+  <title>O Frizão - Noticiário do Orgulho da Nossa Terra</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+    header, footer { background-color: #004080; color: white; padding: 1rem; text-align: center; }
+    nav { background-color: #003366; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; padding: 1rem; text-decoration: none; }
+    nav a:hover { background-color: #0055aa; }
+    main { padding: 2rem; max-width: 1200px; margin: auto; }
+    section { margin-bottom: 2rem; }
+    .news-item, .table-item { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+    .gallery img { width: 100%; max-width: 300px; border-radius: 8px; margin: 0.5rem; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    form { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    input, textarea { width: 100%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; border: 1px solid #ccc; }
+    button { padding: 0.5rem 1rem; background-color: #004080; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { padding: 0.75rem; border: 1px solid #ccc; text-align: center; }
+    th { background-color: #0055aa; color: white; }
+    @media (max-width: 768px) { nav a { padding: 0.5rem; } }
   </style>
 </head>
 <body>
-  <h1>EM BREVE</h1>
-  <p>O FRIZÃO | O SEU SITE SOBRE O FRIBURGUENSE</p>
-  <a href="https://www.instagram.com/ofrizao/" target="_blank" rel="noopener noreferrer">
-    Visite nosso Instagram
+  <header>
+    <h1>O Frizão</h1>
+    <p>Noticiário do Orgulho da Nossa Terra</p>
+  </header>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#noticias">Notícias</a>
+    <a href="#tabelas">Tabelas</a>
+    <a href="#último jogo">Último Jogo</a>
+    <a href="#historia">História</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#calendario">Calendário</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo ao melhor site sobre o Friburguense AC</h2>
+      <p>O Friburguense Atlético Clube é o orgulho de Nova Friburgo! Acompanhe todas as notícias, jogos e bastidores do clube aqui no único portal do torcedor.</p>
+    </section>
+    <section id="noticias">
+      <h2>Últimas Notícias</h2>
+      <div class="news-item">
+        <h3>Partidas da B1 definidas.</h3>
+        <p>O Friburguense irá enfrentar o Carapebus no dia 6/9, ao todo serão 11 rodadas e um mata-mata.<a href="#calendario" class="text-blue-600 underline hover:text-blue-800">Veja as partidas aqui. </a> 24/07/2025</p>
+      </div>
+      <div class="news-item">
+        <h3>Criação do site!</h3>
+        <p>O site O Frizão finalmente foi criado, tem alguma sugestão? <a href="#contato" class="text-blue-600 underline hover:text-blue-800">Contate-nos. </a> 24/07/2025</p>
+      </div>
+    </section>
+    <section id="tabelas">
+      <h2>Tabela do Campeonato</h2>
+      <div class="table-item">
+        <table>
+          <thead>
+            <tr><th>Posição</th><th>Clube</th><th>Pontos</th><th>Jogos</th><th>Vitórias</th><th>Empates</th><th>Derrotas</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1º</td><td>Artsul</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>2º</td><td>Bonsucesso</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>3º</td><td>Campo Grande</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>4º</td><td>Carapebus</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>5º</td><td>Duque de Caxias</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>6º</td><td>Friburguense</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>7º</td><td>Niteroiense</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>8º</td><td>Nova Cidade</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>9º</td><td>Paduano</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>10º</td><td>Petrópolis</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>11º</td><td>São Cristóvão</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>12º</td><td>Serrano</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+<section id="último jogo" style="margin-top: 40px;">
+  <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Último jogo</h2>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 40px; background-color: #f0f0f0; padding: 20px; border-radius: 20px; max-width: 600px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <!-- Time da esquerda -->
+    <div style="text-align: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" style="width: 60px; height: 60px;">
+      <div style="margin-top: 10px; font-weight: bold;">Friburguense</div>
+    </div>
+
+    <!-- Placar -->
+    <div style="font-size: 36px; font-weight: bold; background: #ffffff; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+      1 x 1
+    </div>
+
+    <!-- Time da direita -->
+    <div style="text-align: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Nova_Cidade-RJ_%28BRA%29.png" style="width: 60px; height: 60px;">
+      <div style="margin-top: 10px; font-weight: bold;">Nova Cidade</div>
+    </div>
+  </div>
+</section> 
+
+<section id="historia">
+  <h2>História</h2>
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Escudos_antigos_friburguense.png" alt="Escudos antigos do Friburguense" style="max-width: 300px; width: 100%; border-radius: 8px;">
+  </div>
+  <p>
+    O Friburguense Atlético Clube foi fundado em 1980 pela junção do Serrano-NF e Fluminense-NF e possui uma rica história no futebol do Rio de Janeiro. O clube é conhecido por sua grande torcida e por representar com orgulho a cidade de Nova Friburgo. Ao longo das décadas, passou por várias fases, conquistando títulos importantes e formando grandes jogadores.
+  </p>
+  <h2>O FRIZÃO</h2>
+  <p>
+    Fomos criados em janeiro de 2024 como  Frizão da Zoeira, em julho de 2025 evoluimos e viramos O Frizão, além disso O Frizão é o apelido carinhoso dado à equipe pelos seus torcedores. Ele simboliza a força, a tradição e o orgulho da nossa terra. Acompanhe aqui todas as novidades, curiosidades e fatos históricos que fazem do Friburguense um clube único.
+  </p>
+</section>
+  </div>
+</div>
+    <section id="galeria">
+      <h2>Galeria de Fotos</h2>
+      <div class="gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Aerea-friburguense-ac.jpg" alt="Estádio">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Fri_torcida.jpg" alt="Torcida">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Friburguense_em_2011.jpg" alt="Jogo">
+      </div>
+    </section>
+    <section id="videos">
+      <h2>Vídeos</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/kGljIWL5xvg" title="Destaques do Frizão" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section id="calendario">
+      <h2>Próximos Jogos</h2>
+      <ul>
+        <li><strong>06/09</strong>: Friburguense x Carapebus - 14:45</li>
+        <li><strong>13/09</strong>: Petrópolis x Friburguense - 14:45</li>
+        <li><strong>20/09</strong>: Friburguense x Serrano - 14:45</li>
+        <li><strong>27/09</strong>: Artsul x Friburguense - 14:45</li>
+        <li><strong>04/10</strong>: Friburguense x Bonsucesso - 15:00</li>
+        <li><strong>11/10</strong>: Campo Grande x Friburguense - 15:00</li>
+        <li><strong>18/10</strong>: Friburguense x Duque de Caxias - 15:00</li>
+        <li><strong>25/10</strong>: São Cristóvão x Friburguense - 15:00 - </li>
+        <li><strong>29/10</strong>: Paduano x Friburguense - 15:00</li>
+        <li><strong>01/11</strong>: Friburguense x Niteroiense - 15:00</li>
+        <li><strong>08/11</strong>: Nova Cidade x Friburguense - 15:00</li>
+      </ul>
+    </section>
+    <section id="contato">
+      <h2>Fale Conosco</h2>
+      <form action="https://formsubmit.co/contato@ofrizao.com.br" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu email" required>
+        <textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 1rem;">
+  <a href="https://www.instagram.com/ofrizao" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 30px; height: 30px;">
   </a>
-</p> <a href="mailto:contato@ofrizao.com.br">Contate-nos</a></p>
+  <a href="https://www.facebook.com/ofrizao" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" style="width: 30px; height: 30px;">
+  </a>
+</div>
+  </main>
+  <footer>
+    <p>&copy; 2025 O Frizão - Todos os direitos reservados</p>
+  </footer>
 </body>
-</html>
+                                                                                                   </html>

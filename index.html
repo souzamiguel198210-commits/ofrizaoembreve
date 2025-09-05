@@ -1,407 +1,485 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="6vD9xriYjPtga2e_J-R7xxfWnqCppGhL2v8D-6QVMUs" />
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" type="image/png">
-  <title>O Frizão - Noticiário do Orgulho da Nossa Terra</title>
-  <!-- Meta descrição ajuda o Google a entender melhor seu site -->
-<meta name="description" content="O Frizão é o site do torcedor do Friburguense Atlético Clube, com notícias, calendário, história e muito mais!">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="O Frizão é o site do torcedor do Friburguense Atlético Clube, com notícias, calendário, história e muito mais!" />  <!-- Open Graph -->  <meta property="og:title" content="O Frizão - Noticiário do Orgulho da Nossa Terra" />
+  <meta property="og:description" content="Acompanhe tudo sobre o Friburguense AC: jogos, tabelas, vídeos, história e curiosidades." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ofrizao.com.br" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" />  <!-- Schema.org -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "O Frizão",
+    "url": "https://ofrizao.com.br"
+  }
+  </script>  <!-- Google AdSense (mantido) -->  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3608240886343042" crossorigin="anonymous"></script>
+  <title>O Frizão - Noticiário do Orgulho da Nossa Terra</title>  <style>
+    :root{
+      --bg:#0b1220;         /* azul petróleo escuro */
+      --card:#0f1a33;       /* carta */
+      --muted:#7aa3ff;      /* azul claro */
+      --brand:#1f5fff;      /* azul principal */
+      --brand-2:#e53935;    /* vermelho detalhe */
+      --text:#eef3ff;       /* texto principal */
+      --text-dim:#c9d3ff;   /* texto secundário */
+      --ring: rgba(127,170,255,.45);
+      --shadow: 0 8px 30px rgba(0,0,0,.3);
+      --radius: 16px;
+    }
 
-<!-- Open Graph para SEO e redes sociais -->
-<meta property="og:title" content="O Frizão - Noticiário do Orgulho da Nossa Terra">
-<meta property="og:description" content="Acompanhe tudo sobre o Friburguense AC: jogos, tabelas, vídeos, história e curiosidades.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ofrizao.com.br">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png">
+    *{box-sizing: border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(31,95,255,.18), transparent),
+                  radial-gradient(800px 400px at -10% 20%, rgba(229,57,53,.12), transparent),
+                  var(--bg);
+      color: var(--text);
+    }
 
-<!-- Schema.org para buscadores como Google -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "O Frizão",
-  "url": "https://ofrizao.com.br"
-}
-</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3608240886343042"
-     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
-    header, footer { background-color: #004080; color: white; padding: 1rem; text-align: center; }
-    nav { background-color: #003366; display: flex; justify-content: center; flex-wrap: wrap; }
-    nav a { color: white; padding: 1rem; text-decoration: none; }
-    nav a:hover { background-color: #0055aa; }
-    main { padding: 2rem; max-width: 1200px; margin: auto; }
-    section { margin-bottom: 2rem; }
-    .news-item, .table-item { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 1rem; }
-    .gallery img { width: 100%; max-width: 300px; border-radius: 8px; margin: 0.5rem; }
-    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-    form { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    input, textarea { width: 100%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; border: 1px solid #ccc; }
-    button { padding: 0.5rem 1rem; background-color: #004080; color: white; border: none; border-radius: 4px; cursor: pointer; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { padding: 0.75rem; border: 1px solid #ccc; text-align: center; }
-    th { background-color: #0055aa; color: white; }
-    @media (max-width: 768px) { nav a { padding: 0.5rem; } }
-  </style>
-</head>
+    /* ===== Header ===== */
+    .header{
+      position: sticky; top:0; z-index:1000;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: linear-gradient(180deg, rgba(10,16,30,.9), rgba(10,16,30,.6));
+      border-bottom: 1px solid rgba(122,163,255,.18);
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .head-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text)}
+    .brand img{width:40px;height:40px;border-radius:50%;box-shadow:0 4px 14px rgba(31,95,255,.35)}
+    .brand h1{font-size:1.1rem;line-height:1;margin:0}
+    .tag{font-size:.75rem;color:var(--text-dim)}
+
+    /* Desktop nav */
+    .nav{display:none;gap:10px;}
+    .nav a{color:var(--text-dim);text-decoration:none;padding:10px 12px;border-radius:12px;transition:.2s}
+    .nav a:hover{color:var(--text);background:rgba(122,163,255,.08)}
+
+    /* Hamburger */
+    .burger{border:0;background:transparent;color:var(--text);font-size:1.6rem;cursor:pointer;display:flex;align-items:center;gap:8px}
+    .burger:focus-visible{outline:2px solid var(--ring);border-radius:10px}
+
+    /* Drawer */
+    .drawer{position:fixed;inset:0;display:none}
+    .drawer.open{display:block}
+    .drawer .backdrop{position:absolute;inset:0;background:rgba(3,6,12,.6)}
+    .drawer .panel{
+      position:absolute;inset:0 auto 0 0;width:min(86%,340px);
+      background:linear-gradient(180deg, #0f1a33, #0b1328);
+      border-right:1px solid rgba(122,163,255,.2);
+      box-shadow: var(--shadow);
+      padding:20px; overflow-y:auto;
+    }
+    .drawer .close{background:transparent;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+    .drawer nav{display:grid;gap:8px;margin-top:10px}
+    .drawer a{padding:12px 10px;border-radius:12px;text-decoration:none;color:var(--text-dim);display:flex;justify-content:space-between;align-items:center}
+    .drawer a:hover{background:rgba(122,163,255,.08);color:var(--text)}
+
+    /* ===== Hero ===== */
+    .hero{padding:38px 0 20px}
+    .hero .title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 6px;font-weight:800}
+    .hero .subtitle{color:var(--text-dim);margin:0}
+
+    /* ===== Sections ===== */
+    section{scroll-margin-top:88px}
+    .section{padding:26px 0}
+    .section h2{font-size:1.4rem;margin:0 0 14px}
+
+    /* Cards grid */
+    .grid{display:grid;gap:16px}
+    @media (min-width:720px){.grid{grid-template-columns:repeat(12,1fr)}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(122,163,255,.18);border-radius:var(--radius);padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--text-dim)}
+    .chip{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(31,95,255,.12);color:#cfe0ff;font-size:.75rem}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--brand);color:white;text-decoration:none;box-shadow:0 6px 20px rgba(31,95,255,.45)}
+    .btn:hover{filter:brightness(1.08)}
+
+    /* News card media */
+    .media{width:100%;border-radius:12px;height:auto;display:block}
+
+    /* Table responsive */
+    .table-wrap{overflow:auto;border:1px solid rgba(122,163,255,.18);border-radius:14px}
+    table{width:100%;border-collapse:collapse;min-width:620px}
+    th,td{padding:12px 10px;border-bottom:1px solid rgba(122,163,255,.15);text-align:center}
+    th{background:rgba(31,95,255,.15);color:#e8efff}
+    td.team{display:flex;align-items:center;gap:10px}
+    td.team img{width:22px;height:22px;border-radius:4px}
+
+    /* Last Match */
+    .score-wrap{display:flex;justify-content:center;align-items:center;gap:28px;background:linear-gradient(180deg,#0f1a33,#0b1328);border:1px solid rgba(122,163,255,.18);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+    .team{text-align:center}
+    .team img{width:60px;height:60px;border-radius:12px}
+    .placar{font-size:2rem;font-weight:900;background:#0a162e;border:1px solid rgba(122,163,255,.25);padding:10px 18px;border-radius:12px}
+
+    /* Gallery */
+    .gallery{display:grid;gap:10px}
+    @media(min-width:640px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery img{width:100%;border-radius:14px}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(122,163,255,.18);margin-top:40px}
+    .foot{padding:20px 0;color:var(--text-dim);font-size:.9rem}
+    .foot .actions{margin-top:8px}
+    .foot .actions button{background:#143065;border:0;color:white;padding:8px 12px;border-radius:10px;cursor:pointer}
+    .foot .actions button:hover{background:#102751}
+
+    /* Desktop layout */
+    @media(min-width:1000px){
+      .nav{display:flex}
+      .burger{display:none}
+    }
+  </style></head>
 <body>
-  <header>
-    <h1>O Frizão</h1>
-    <p>Noticiário do Orgulho da Nossa Terra</p>
-  </header>
-  <nav>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container head-row">
+      <a class="brand" href="#inicio">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Escudo do Friburguense" />
+        <div>
+          <h1>O Frizão</h1>
+          <span class="tag">Noticiário do Orgulho da Nossa Terra</span>
+        </div>
+      </a><nav class="nav" aria-label="Navegação principal">
     <a href="#inicio">Início</a>
     <a href="#noticias">Notícias</a>
     <a href="#tabelas">Tabelas</a>
-    <a href="#último jogo">Último Jogo</a>
+    <a href="#ultimo-jogo">Último Jogo</a>
     <a href="#historia">História</a>
-     <a href="#linha-do-tempo">Linha do Tempo</a>
-    <a href="#galeria-trofeus">Galeria de Troféus</a>
+    <a href="#jogadores">Jogadores</a>
+    <a href="#linha-do-tempo">Linha do Tempo</a>
+    <a href="#galeria-trofeus">Troféus</a>
     <a href="#galeria">Galeria</a>
     <a href="#videos">Vídeos</a>
     <a href="#calendario">Calendário</a>
     <a href="#contato">Contato</a>
   </nav>
-  <main>
-    <section id="inicio">
-      <h2>Bem-vindo ao melhor site sobre o Friburguense AC</h2>
-      <p>O Friburguense Atlético Clube é o orgulho de Nova Friburgo! Acompanhe todas as notícias, jogos e bastidores do clube aqui no único portal do torcedor, este site é feito por torcedores e não tem nenhuma ligação oficial com o Friburguense Atlético Clube.</p>
-    </section>
-    <section id="noticias">
-      <h2>Últimas Notícias</h2>
-      <div class="news-item">
-  <h2>Tabela embelezada e VLibras agora no O Frizão!</h2>
-  <img src="https://raw.githubusercontent.com/souzamiguel198210-commits/ofrizaoembreve/7989a5a00d33d9f6060cb312076d4daeed416a8d/103%20Sem%20T%C3%ADtulo_20250728033144.png" 
-       alt="Imagem da nova tabela do campeonato" 
-       style="width: 100%; max-width: 600px; border-radius: 8px; margin: 15px 0;">
-  <p>
-    Agora a tabela do campeonato está mais bonita e adaptada para todos os dispositivos móveis, facilitando a consulta rápida no celular ou tablet.
-  </p>
-  <p>
-    Além disso, implementamos o recurso de <strong>VLibras</strong>, que traduz o conteúdo do site para a Língua Brasileira de Sinais. Essa ferramenta oficial do Governo Federal garante acessibilidade para torcedores surdos acompanharem as novidades do Frizão.
-  </p>
-  <p>
-    Aqui no <strong>O Frizão</strong>, todos os torcedores têm vez!
-  </p>
+
+  <button class="burger" aria-label="Abrir menu" aria-controls="drawer" aria-expanded="false" id="burgerBtn">☰</button>
+</div>
+
+  </header>  <!-- Drawer (Mobile) -->  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2 id="menuTitle" style="margin:0">Menu</h2>
+        <button class="close" aria-label="Fechar menu" data-close>✕</button>
       </div>
-      <div class="news-item">
-  <h2>Primeiro jogo do Frizão está marcado!</h2>
-  <img src="https://raw.githubusercontent.com/souzamiguel198210-commits/ofrizaoembreve/a920112cf1c66395259e126447b8389a0e673500/20250725_172212.png" alt="Friburguense vs Carapebus" style="width:100%; max-width:600px; border-radius: 8px; margin: 10px 0;">
-  <p>O Friburguense estreia na temporada no dia <strong>06 de setembro de 2025</strong>, às <strong>14h45</strong>, contra o <strong>Carapebus</strong>, no <strong>Estádio Eduardo Guinle</strong>, em Nova Friburgo.</p>
-  <p>É o começo da caminhada tricolor no campeonato!</p>
-  <p><a href="https://ofrizao.com.br/?fbclid=PAQ0xDSwLwwrlleHRuA2FlbQIxMQABp5PxvWbvm16C3xPd_n1Teh3-roNuP6VFlFluQ_bxD3ZtGlSYIEsrcSYw2TDP_aem_9syc8jyIz6UOyBF7-si_Ww#noticias" target="_blank">Leia mais no site</a></p>
-        </div>
-      <div class="news-item">
-        <h3>Criação do site!</h3>
-        <p>O site O Frizão finalmente foi criado, tem alguma sugestão? <a href="#contato" class="text-blue-600 underline hover:text-blue-800">Contate-nos. </a> 24/07/2025</p>
-      </div>
-    </section>
-<section id="tabelas">
+      <nav aria-label="Menu móvel">
+        <a href="#inicio" data-link>Início</a>
+        <a href="#noticias" data-link>Notícias</a>
+        <a href="#tabelas" data-link>Tabelas</a>
+        <a href="#ultimo-jogo" data-link>Último Jogo</a>
+        <a href="#historia" data-link>História</a>
+        <a href="#jogadores" data-link >Jogadores</a>
+        <a href="#linha-do-tempo" data-link>Linha do Tempo</a>
+        <a href="#galeria-trofeus" data-link>Troféus</a>
+        <a href="#galeria" data-link>Galeria</a>
+        <a href="#videos" data-link>Vídeos</a>
+        <a href="#calendario" data-link>Calendário</a>
+        <a href="#contato" data-link>Contato</a>
+        <div style="height:8px"></div>
+        <a href="https://www.instagram.com/ofrizao" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.facebook.com/ofrizao" target="_blank" rel="noopener">Facebook ↗</a>
+        <a href="https://whatsapp.com/channel/0029Vb6AH2a7T8bYHJQnTD3w" target="_blank" rel="noopener">Canal no WhatsApp ↗</a>
+      </nav>
+    </div>
+  </aside>  <main class="container">
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+      <h2 class="title">Bem-vindo ao melhor site sobre o Friburguense AC</h2>
+      <p class="subtitle">Portal feito por torcedores — não oficial. Aqui você acompanha notícias, jogos, tabelas, vídeos e a história do <strong>Orgulho da Nossa Terra</strong>.</p>
+    </section><!-- Notícias -->
+<section id="noticias" class="section">
+  <h2>Últimas Notícias</h2>
+  <div class="grid">
+    <article class="card" style="grid-column: span 12">
+      <h3>Tabela embelezada e VLibras agora no O Frizão!</h3>
+      <img class="media" src="https://raw.githubusercontent.com/souzamiguel198210-commits/ofrizaoembreve/7989a5a00d33d9f6060cb312076d4daeed416a8d/103%20Sem%20T%C3%ADtulo_20250728033144.png" alt="Nova tabela do campeonato" />
+      <p class="muted">A tabela agora está mais bonita e responsiva para celular. Implementamos também o <strong>VLibras</strong> para acessibilidade em Libras.</p>
+    </article>
+    <article class="card" style="grid-column: span 12">
+      <h3>Primeiro jogo do Frizão está marcado!</h3>
+      <img class="media" src="https://raw.githubusercontent.com/souzamiguel198210-commits/ofrizaoembreve/a920112cf1c66395259e126447b8389a0e673500/20250725_172212.png" alt="Friburguense vs Carapebus" />
+      <p>Estreia em <strong>06/09/2025</strong>, às <strong>14:45</strong>, contra o <strong>Carapebus</strong>, no <strong>Eduardo Guinle</strong>, em Nova Friburgo. <a class="btn" href="https://ofrizao.com.br/#noticias" target="_blank" rel="noopener">Ler mais</a></p>
+    </article>
+    <article class="card" style="grid-column: span 12">
+      <h3>Criação do site!</h3>
+      <p class="muted">O Frizão entrou no ar — tem sugestão? <a href="#contato">Fale com a gente</a>. <span class="chip">24/07/2025</span></p>
+    </article>
+  </div>
+</section>
+
+<!-- Tabelas -->
+<section id="tabelas" class="section">
   <h2>Tabela do Campeonato</h2>
-  <table style="width: 100%; border-collapse: collapse; text-align: center;">
-    <thead style="background-color: #0055aa; color: white;">
-      <tr>
-        <th>Posição</th>
-        <th>Time</th>
-        <th>Pontos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/ArtsulFC.png?raw=true" alt="Artsul" style="width: 24px; height: 24px;">
-          Artsul
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>2º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Bonsucesso_FC_-_Oficial.png" alt="Bonsucesso" style="width: 24px; height: 24px;">
-          Bonsucesso
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>3º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Campo_Grande_AC_-_RJ.svg" alt="Campo Grande" style="width: 24px; height: 24px;">
-          Campo Grande
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>4º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/AA_Carapebus_%28RJ%29_-_Logo.png" alt="Carapebus" style="width: 24px; height: 24px;">
-          Carapebus
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>5º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Duque_de_Caxias_Futebol_Clube.png?raw=true" alt="Duque de Caxias" style="width: 24px; height: 24px;">
-          Duque de Caxias
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>6º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Friburguense" style="width: 24px; height: 24px;">
-          Friburguense
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>7º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Niteroiense_FC_escudo.png?raw=true" alt="Niteroiense" style="width: 24px; height: 24px;">
-          Niteroiense
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>8º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Nova_Cidade-RJ_%28BRA%29.png" alt="Nova Cidade" style="width: 24px; height: 24px;">
-          Nova Cidade
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>9º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Paduano-RJ_%28BRA%29_%281%29.png" alt="Paduano" style="width: 24px; height: 24px;">
-          Paduano
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>10º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Petr%C3%B3polis_Futebol_Clube_logo%20(1).png?raw=true" alt="Petrópolis" style="width: 24px; height: 24px;">
-          Petrópolis
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>11º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/S%C3%A3o_Crist%C3%B3v%C3%A3o_de_Futebol_e_Regatas.jpg?raw=true" alt="São Cristóvão" style="width: 24px; height: 24px;">
-          São Cristóvão
-        </td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>12º</td>
-        <td style="display: flex; align-items: center; gap: 8px; padding: 6px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/SerranoFC.png" alt="Serrano" style="width: 24px; height: 24px;">
-          Serrano
-        </td>
-        <td>0</td>
-      </tr>
-    </tbody>
-  </table>
-</section>   
-<section id="último jogo" style="margin-top: 40px;">
-  <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Último jogo</h2>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 40px; background-color: #f0f0f0; padding: 20px; border-radius: 20px; max-width: 600px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <!-- Time da esquerda -->
-    <div style="text-align: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" style="width: 60px; height: 60px;">
-      <div style="margin-top: 10px; font-weight: bold;">Friburguense</div>
-    </div>
-
-    <!-- Placar -->
-    <div style="font-size: 36px; font-weight: bold; background: #ffffff; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-      1 x 1
-    </div>
-
-    <!-- Time da direita -->
-    <div style="text-align: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Nova_Cidade-RJ_%28BRA%29.png" style="width: 60px; height: 60px;">
-      <div style="margin-top: 10px; font-weight: bold;">Nova Cidade</div>
-    </div>
+  <div class="table-wrap card">
+    <table aria-label="Tabela do Campeonato">
+      <thead>
+        <tr><th>Posição</th><th>Time</th><th>Pontos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1º</td><td class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/ArtsulFC.png?raw=true" alt="Escudo Artsul"/>Artsul</td><td>0</td></tr>
+        <tr><td>2º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Bonsucesso_FC_-_Oficial.png" alt="Escudo Bonsucesso"/>Bonsucesso</td><td>0</td></tr>
+        <tr><td>3º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Campo_Grande_AC_-_RJ.svg" alt="Escudo Campo Grande"/>Campo Grande</td><td>0</td></tr>
+        <tr><td>4º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/AA_Carapebus_%28RJ%29_-_Logo.png" alt="Escudo Carapebus"/>Carapebus</td><td>0</td></tr>
+        <tr><td>5º</td><td class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Duque_de_Caxias_Futebol_Clube.png?raw=true" alt="Escudo Duque de Caxias"/>Duque de Caxias</td><td>0</td></tr>
+        <tr><td>6º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Escudo Friburguense"/>Friburguense</td><td>0</td></tr>
+        <tr><td>7º</td><td class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Niteroiense_FC_escudo.png?raw=true" alt="Escudo Niteroiense"/>Niteroiense</td><td>0</td></tr>
+        <tr><td>8º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Nova_Cidade-RJ_%28BRA%29.png" alt="Escudo Nova Cidade"/>Nova Cidade</td><td>0</td></tr>
+        <tr><td>9º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Paduano-RJ_%28BRA%29_%281%29.png" alt="Escudo Paduano"/>Paduano</td><td>0</td></tr>
+        <tr><td>10º</td><td class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Petr%C3%B3polis_Futebol_Clube_logo%20(1).png?raw=true" alt="Escudo Petrópolis"/>Petrópolis</td><td>0</td></tr>
+        <tr><td>11º</td><td class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/S%C3%A3o_Crist%C3%B3v%C3%A3o_de_Futebol_e_Regatas.jpg?raw=true" alt="Escudo São Cristóvão"/>São Cristóvão</td><td>0</td></tr>
+        <tr><td>12º</td><td class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/SerranoFC.png" alt="Escudo Serrano"/>Serrano</td><td>0</td></tr>
+      </tbody>
+    </table>
   </div>
-</section> 
+</section>
 
-<section id="historia">
+<!-- Último jogo -->
+<section id="ultimo-jogo" class="section">
+  <h2>Último jogo</h2>
+  <div class="score-wrap card">
+    <div class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Friburguense"/><div style="margin-top:8px;font-weight:700">Friburguense</div></div>
+    <div class="placar">1 x 1</div>
+    <div class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Nova_Cidade-RJ_%28BRA%29.png" alt="Nova Cidade"/><div style="margin-top:8px;font-weight:700">Nova Cidade</div></div>
+  </div>
+</section>
+
+<!-- História -->
+<section id="historia" class="section">
   <h2>História</h2>
-  <div style="text-align: center; margin-bottom: 1rem;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Escudos_antigos_friburguense.png" alt="Escudos antigos do Friburguense" style="max-width: 300px; width: 100%; border-radius: 8px;">
-  </div>
-  <p>
-    O Friburguense Atlético Clube foi fundado em 1980 pela junção do Serrano-NF e Fluminense-NF e possui uma rica história no futebol do Rio de Janeiro. O clube é conhecido por sua grande torcida e por representar com orgulho a cidade de Nova Friburgo. Ao longo das décadas, passou por várias fases, conquistando títulos importantes e formando grandes jogadores.
-  </p>
-  <h2>O FRIZÃO</h2>
-  <p>
-    Fomos criados em janeiro de 2024 como  Frizão da Zoeira, em julho de 2025 evoluimos e viramos O Frizão, além disso O Frizão é o apelido carinhoso dado à equipe pelos seus torcedores. Ele simboliza a força, a tradição e o orgulho da nossa terra. Acompanhe aqui todas as novidades, curiosidades e fatos históricos que fazem do Friburguense um clube único.
-  </p>
-</section>
-  </div>
-<section id="linha-do-tempo" style="margin-top: 40px;">
-  <h2>Linha do Tempo do Friburguense Atlético Clube</h2>
-  <div style="border-left: 4px solid #004080; padding-left: 20px; margin-top: 20px;">
-    
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">1980 – Fundação</div>
-      <p>Fundação em 14 de março pela fusão do Fluminense Atlético Clube e do Serrano Futebol Clube, ambos de Nova Friburgo.</p>
+  <div class="card">
+    <div style="text-align:center;margin-bottom:12px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Escudos_antigos_friburguense.png" alt="Escudos antigos do Friburguense" style="max-width:320px;width:100%;border-radius:12px"/>
     </div>
-
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">1980–1984 – Primeiros Anos e Ascensão</div>
-      <p>Estreia na Segunda Divisão do Campeonato Carioca em 1980; conquista o 2º lugar em 1983 e acessa a Primeira Divisão em 1984.</p>
-    </div>
-
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">1990–2000 – Consolidação e Participações Nacionais</div>
-      <p>Conquista a Série B do Campeonato Carioca em 1994 e 1997; participa da Série C do Brasileiro em 1998 e da Copa do Brasil em 2005.</p>
-    </div>
-
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">2000–2010 – Desafios e Retorno ao Destaque</div>
-      <p>Enfrenta dificuldades financeiras; conquista o Troféu João Ellis Filho em 2009 e é vice-campeão da Copa Rio em 2011.</p>
-    </div>
-
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">2010–2020 – Retorno às Competições Estaduais</div>
-      <p>Vice-campeão da Copa Rio em 2016; campeão da Série A2 do Campeonato Carioca em 2019.</p>
-    </div>
-
-    <div style="margin-bottom: 25px; position: relative;">
-      <div style="font-weight: bold; color: #004080; font-size: 1.2em; margin-bottom: 5px;">2020–2025 – Atualidade e Desafios</div>
-      <p>Participa da Série B1 do Campeonato Carioca; quinto lugar da Taça Corcovado em 2024; busca fortalecimento para retorno à elite.</p>
-    </div>
-
+    <p>O Friburguense Atlético Clube foi fundado em 1980 pela junção do Serrano-NF e do Fluminense-NF e carrega a tradição de Nova Friburgo. Ao longo das décadas, conquistou títulos, revelou talentos e manteve forte ligação com a cidade.</p>
+    <h3>O FRIZÃO</h3>
+    <p>Nascido como <em>Frizão da Zoeira</em> em 01/2024, evoluímos em 07/2025 para <strong>O Frizão</strong>. É o apelido carinhoso que simboliza a força, a história e o orgulho da nossa terra.</p>
   </div>
 </section>
-<section id="galeria-trofeus" style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 800px; margin: 2rem auto;">
-  <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1.5rem;">Galeria de Troféus - Friburguense Atlético Clube</h2>
-
-  <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #ecf0f1; padding-bottom: 20px;">
-    <img 
-      src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/ee8d3513afa3166b311508266a5daf65e0266e19/04700f1c-cc09-44c2-91b9-10cfd49c337b.jpg?raw=true" 
-      alt="Logo Campeonato Carioca A2" 
-      style="width: 100px; height: auto; margin-right: 20px; border-radius: 8px;"
-    />
-    <div>
-      <h3 style="margin: 0 0 10px 0; color: #34495e;">Campeonato Carioca Série A2</h3>
-      <p style="margin: 2px 0;"><strong>1994</strong></p>
-      <p style="margin: 2px 0;"><strong>1997</strong></p>
-      <p style="margin: 2px 0;"><strong>2019</strong></p>
-    </div>
-  </div>
-
-  <div style="display: flex; align-items: center;">
-    <img 
-      src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/ae2918fba06b45334075c0bf04c1deb232c55ccc/20200423_foto-2-friburguense.jpg?raw=true" 
-      alt="Taça João Elis Filho 2009" 
-      style="width: 100px; height: auto; margin-right: 20px; border-radius: 8px;"
-    />
-    <div>
-      <h3 style="margin: 0 0 10px 0; color: #34495e;">Taça João Elis Filho</h3>
-      <p style="margin: 2px 0;"><strong>2009</strong></p>
-    </div>
-  </div>
-</section>
-  </div>
-    <section id="galeria">
-      <h2>Galeria de Fotos</h2>
-      <div class="gallery">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Aerea-friburguense-ac.jpg" alt="Estádio">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Fri_torcida.jpg" alt="Torcida">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Friburguense_em_2011.jpg" alt="Jogo">
-      </div>
-    </section>
-    <section id="videos">
-      <h2>Vídeos</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/kGljIWL5xvg" title="Destaques do Frizão" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
-    <section id="calendario">
-      <h2>Próximos Jogos</h2>
-      <ul>
-        <li><strong>06/09</strong>: Friburguense x Carapebus - 14:45</li>
-        <li><strong>13/09</strong>: Petrópolis x Friburguense - 14:45</li>
-        <li><strong>20/09</strong>: Friburguense x Serrano - 14:45</li>
-        <li><strong>27/09</strong>: Artsul x Friburguense - 14:45</li>
-        <li><strong>04/10</strong>: Friburguense x Bonsucesso - 15:00</li>
-        <li><strong>11/10</strong>: Campo Grande x Friburguense - 15:00</li>
-        <li><strong>18/10</strong>: Friburguense x Duque de Caxias - 15:00</li>
-        <li><strong>25/10</strong>: São Cristóvão x Friburguense - 15:00 - </li>
-        <li><strong>29/10</strong>: Paduano x Friburguense - 15:00</li>
-        <li><strong>01/11</strong>: Friburguense x Niteroiense - 15:00</li>
-        <li><strong>08/11</strong>: Nova Cidade x Friburguense - 15:00</li>
+<!-- Elenco -->
+<section id="jogadores" class="section">
+  <h2>Jogadores do Friburguense AC</h2>
+  <div class="grid">
+    <!-- Goleiros -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Goleiros</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Afonso</li>
+        <li>San</li>
       </ul>
-    </section>
-    <section id="contato">
-      <h2>Fale Conosco</h2>
-      <form action="https://formsubmit.co/contato@ofrizao.com.br" method="POST">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu email" required>
-        <textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 1rem;">
-  <a href="https://www.instagram.com/ofrizao" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 30px; height: 30px;">
-  </a>
-  <a href="https://www.facebook.com/ofrizao" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" style="width: 30px; height: 30px;">
-  </a>
-      <a href="https://whatsapp.com/channel/0029Vb6AH2a7T8bYHJQnTD3w" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Canal do WhatsApp" style="width: 32px; height: 32px;">
-      </a>
-</div>
-  </main>
-  <footer>
-  <footer style="text-align: center; padding: 1rem; background-color: #004080; color: white; position: relative;">
-  <p style="margin: 0;">
-    &copy; 2025 O Frizão - Todos os direitos reservados
-  </p>
-  <button 
-    onclick="window.location.href='politica-privacidade.html'" 
-    style="
-      margin-top: 8px;
-      background-color: #0055aa;
-      border: none;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background-color 0.3s ease;
-    "
-    onmouseover="this.style.backgroundColor='#003d7a';"
-    onmouseout="this.style.backgroundColor='#0055aa';"
-  >
-    Política de Privacidade
-  </button>
-  </footer>
-  </footer>
+    </div>
 
-  <!-- Seu conteúdo HTML -->
+    <!-- Laterais -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Laterais</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Ryan</li>
+        <li>Igor Gomes</li>
+        <li>Kaique</li>
+        <li>Johnny</li>
+        <li>Danilo</li>
+      </ul>
+    </div>
 
-<div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
+    <!-- Zagueiros -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Zagueiros</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Maurício</li>
+        <li>Ryan Padilha</li>
+        <li>Paulinho</li>
+        <li>Kauã</li>
+      </ul>
+    </div>
+
+    <!-- Volantes -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Volantes</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Ronaldo</li>
+        <li>Ryan Daudt</li>
+        <li>Kaio Eduardo</li>
+      </ul>
+    </div>
+
+    <!-- Meias -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Meias</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Israel</li>
+        <li>Rian Alves</li>
+        <li>Pedrinho</li>
+        <li>Cadu</li>
+      </ul>
+    </div>
+
+    <!-- Atacantes -->
+    <div class="card" style="grid-column: span 12">
+      <h3>Atacantes</h3>
+      <ul style="margin:0;padding-left:18px;line-height:1.8">
+        <li>Léo Reis</li>
+        <li>Nathanzinho</li>
+        <li>Bernardo</li>
+        <li>Kaio Gabriel</li>
+        <li>Luiz Fernando</li>
+      </ul>
+    </div>
   </div>
-</div>
+</section>
+<!-- Linha do tempo -->
+<section id="linha-do-tempo" class="section">
+  <h2>Linha do Tempo do Friburguense Atlético Clube</h2>
+  <div class="card">
+    <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+      <li><span class="chip">1980</span> Fundação em 14 de março pela fusão de Fluminense AC e Serrano FC (Nova Friburgo).</li>
+      <li><span class="chip">1980–84</span> Estreia na 2ª do Carioca (1980), vice (1983) e acesso à elite (1984).</li>
+      <li><span class="chip">1990–2000</span> Campeão da A2 (1994 e 1997); Série C 1998; Copa do Brasil 2005.</li>
+      <li><span class="chip">2000–2010</span> Dificuldades, mas conquista o Troféu João Ellis Filho (2009) e vice da Copa Rio (2011).</li>
+      <li><span class="chip">2010–2020</span> Vice da Copa Rio (2016); Campeão da A2 (2019).</li>
+      <li><span class="chip">2020–2025</span> B1 do Carioca; 5º na Taça Corcovado (2024); projeto para voltar à elite.</li>
+    </ul>
+  </div>
+</section>
 
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
-</body>
+<!-- Troféus -->
+<section id="galeria-trofeus" class="section">
+  <h2>Galeria de Troféus</h2>
+  <div class="grid">
+    <div class="card" style="grid-column: span 12">
+      <div style="display:flex;gap:14px;align-items:center">
+        <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/ee8d3513afa3166b311508266a5daf65e0266e19/04700f1c-cc09-44c2-91b9-10cfd49c337b.jpg?raw=true" alt="Logo Campeonato Carioca A2" style="width:84px;border-radius:12px"/>
+        <div>
+          <h3 style="margin:0">Campeonato Carioca Série A2</h3>
+          <p class="muted" style="margin:6px 0 0">1994 • 1997 • 2019</p>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="grid-column: span 12">
+      <div style="display:flex;gap:14px;align-items:center">
+        <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/ae2918fba06b45334075c0bf04c1deb232c55ccc/20200423_foto-2-friburguense.jpg?raw=true" alt="Taça João Elis Filho 2009" style="width:84px;border-radius:12px"/>
+        <div>
+          <h3 style="margin:0">Taça João Elis Filho</h3>
+          <p class="muted" style="margin:6px 0 0">2009</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galeria -->
+<section id="galeria" class="section">
+  <h2>Galeria de Fotos</h2>
+  <div class="gallery card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Aerea-friburguense-ac.jpg" alt="Estádio Eduardo Guinle" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Fri_torcida.jpg" alt="Torcida do Friburguense" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Friburguense_em_2011.jpg" alt="Time do Friburguense em 2011" />
+  </div>
+</section>
+
+<!-- Vídeos -->
+<section id="videos" class="section">
+  <h2>Vídeos</h2>
+  <div class="card" style="position:relative;padding:0;overflow:hidden">
+    <div style="position:relative;padding-bottom:56.25%;height:0">
+      <iframe src="https://www.youtube.com/embed/kGljIWL5xvg" title="Destaques do Frizão" frameborder="0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Calendário -->
+<section id="calendario" class="section">
+  <h2>Próximos Jogos</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:18px;line-height:1.9">
+      <li><strong>06/09</strong>: Friburguense x Carapebus - 14:45</li>
+      <li><strong>13/09</strong>: Petrópolis x Friburguense - 14:45</li>
+      <li><strong>20/09</strong>: Friburguense x Serrano - 14:45</li>
+      <li><strong>27/09</strong>: Artsul x Friburguense - 14:45</li>
+      <li><strong>04/10</strong>: Friburguense x Bonsucesso - 15:00</li>
+      <li><strong>11/10</strong>: Campo Grande x Friburguense - 15:00</li>
+      <li><strong>18/10</strong>: Friburguense x Duque de Caxias - 15:00</li>
+      <li><strong>25/10</strong>: São Cristóvão x Friburguense - 15:00</li>
+      <li><strong>29/10</strong>: Paduano x Friburguense - 15:00</li>
+      <li><strong>01/11</strong>: Friburguense x Niteroiense - 15:00</li>
+      <li><strong>08/11</strong>: Nova Cidade x Friburguense - 15:00</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="section">
+  <h2>Fale Conosco</h2>
+  <div class="card">
+    <form action="https://formsubmit.co/contato@ofrizao.com.br" method="POST">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" name="nome" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(122,163,255,.25);background:#0a162e;color:var(--text)">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(122,163,255,.25);background:#0a162e;color:var(--text)">
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(122,163,255,.25);background:#0a162e;color:var(--text)"></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+        <button type="submit" class="btn">Enviar</button>
+        <div style="display:flex;gap:10px">
+          <a href="https://www.instagram.com/ofrizao" target="_blank" rel="noopener" class="chip">Instagram</a>
+          <a href="https://www.facebook.com/ofrizao" target="_blank" rel="noopener" class="chip">Facebook</a>
+          <a href="https://whatsapp.com/channel/0029Vb6AH2a7T8bYHJQnTD3w" target="_blank" rel="noopener" class="chip">WhatsApp</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+  </main>  <!-- Footer -->  <footer>
+    <div class="container foot">
+      <p>© 2025 O Frizão — Todos os direitos reservados</p>
+      <div class="actions">
+        <button onclick="window.location.href='politica-privacidade.html'">Política de Privacidade</button>
+      </div>
+    </div>
+  </footer>  <!-- VLibras -->  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>  <!-- Menu: acessível e simples -->  <script>
+    (function(){
+      const drawer = document.getElementById('drawer');
+      const burger = document.getElementById('burgerBtn');
+      const closeEls = drawer.querySelectorAll('[data-close]');
+      const links = drawer.querySelectorAll('[data-link]');
+
+      function open(){
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden','false');
+        burger.setAttribute('aria-expanded','true');
+        // Trava rolagem do body no mobile
+        document.documentElement.style.overflow='hidden';
+      }
+      function close(){
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+        burger.setAttribute('aria-expanded','false');
+        document.documentElement.style.overflow='';
+      }
+
+      burger.addEventListener('click', ()=>{
+        const isOpen = drawer.classList.contains('open');
+        isOpen ? close() : open();
+      });
+
+      closeEls.forEach(el=>el.addEventListener('click', close));
+      links.forEach(a=>a.addEventListener('click', close));
+
+      // Fecha com ESC
+      window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+    })();
+  </script></body>
   </html>

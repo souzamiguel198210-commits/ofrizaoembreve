@@ -191,6 +191,16 @@
   </aside>  <main class="container">
     <!-- Hero -->
     <section id="inicio" class="hero">
+      <div class="card aviso-jogo" style="padding:8px 12px; border-radius:8px; text-align:center; font-weight:bold; animation: piscaCores 1s infinite;">
+  DIA DE JOGO! 🔴🔵
+</div>
+<style>
+@keyframes piscaCores {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: red; }
+}
+</style>
       <h2 class="title">Bem-vindo ao melhor site sobre o Friburguense AC</h2>
       <p class="subtitle">Portal feito por torcedores — não oficial. Aqui você acompanha notícias, jogos, tabelas, vídeos e a história do <strong>Orgulho da Nossa Terra</strong>.</p>
     </section><!-- Notícias -->
@@ -548,4 +558,4 @@ const x = setInterval(function() {
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
     })();
   </script></body>
-  </html>
+</html>

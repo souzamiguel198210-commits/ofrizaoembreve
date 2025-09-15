@@ -100,8 +100,14 @@
     .btn:hover{filter:brightness(1.08)}
 
     /* News card media */
-    .media{width:100%;border-radius:12px;height:auto;display:block}
-
+    .media {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  max-width: 600px; /* limite de largura */
+  margin: 0 auto;   /* centraliza */
+  display: block;
+}
     /* Table responsive */
     .table-wrap{overflow:auto;border:1px solid rgba(122,163,255,.18);border-radius:14px}
     table{width:100%;border-collapse:collapse;min-width:620px}
@@ -133,8 +139,7 @@
       .nav{display:flex}
       .burger{display:none}
     }
-  </style><!-- Favicon padrão -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png"></head>
+  </style></head>
 <body>
   <!-- Header -->
   <header class="header" role="banner">
@@ -196,11 +201,11 @@
   Petrópolis 1x0 Friburguense! 🔴🔵
 </div>
 <style>
-@keyframes piscaCores {
-  0% { color: red; }
-  50% { color: blue; }
-  100% { color: red; }
-}
+  @keyframes piscaCores {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
 </style>
       <h2 class="title">Bem-vindo ao melhor site sobre o Friburguense AC</h2>
       <p class="subtitle">Portal feito por torcedores — não oficial. Aqui você acompanha notícias, jogos, tabelas, vídeos e a história do <strong>Orgulho da Nossa Terra</strong>.</p>
@@ -399,13 +404,24 @@ const x = setInterval(function() {
   }
 }, 1000);
 </script>
-  <h2>Último jogo</h2>
-  <div class="score-wrap card">
-    <div class="team"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Friburguense"/><div style="margin-top:8px;font-weight:700">Friburguense</div></div>
-    <div class="placar">0x1</div>
-    <div class="team"><img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Petr%C3%B3polis_Futebol_Clube_logo%20(1).png?raw=true" alt="Escudo Petrópolis"/><div style="margin-top:8px;font-weight:700">Petrópolis</div></div>
+<h2>Último jogo</h2>
+<div class="score-wrap card">
+  <div class="team">
+    <!-- Escudo do Friburguense: agora com proporção preservada -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Friburguense_ac.png" alt="Friburguense" style="width:60px; height:60px; object-fit:contain;"/>
+    <div>Friburguense</div>
   </div>
-</section>
+
+  <div class="placar">0x1</div>
+
+  <div class="team">
+    <!-- Escudo do Petrópolis: também proporcional -->
+    <img src="https://github.com/souzamiguel198210-commits/ofrizaoembreve/blob/4a9fe0362331378e12e1a0afc3b42b76efdf9551/Petr%C3%B3polis_Futebol_Clube_logo%20(1).png?raw=true" alt="Petrópolis" style="width:60px; height:60px; object-fit:contain;"/>
+    <div>Petrópolis</div>
+  </div>
+</div>
+
+</div>
 
 <!-- História -->
 <section id="historia" class="section">
@@ -637,4 +653,4 @@ const x = setInterval(function() {
       window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
     })();
   </script></body>
-            </html>
+  </html>

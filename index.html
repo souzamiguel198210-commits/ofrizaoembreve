@@ -29,6 +29,16 @@
       --shadow: 0 8px 30px rgba(0,0,0,.3);
       --radius: 16px;
     }
+    
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "03336df3-af32-4f91-bee7-dabd7082289b",
+    });
+  });
+</script>
 
     *{box-sizing: border-box}
     html{scroll-behavior:smooth}
